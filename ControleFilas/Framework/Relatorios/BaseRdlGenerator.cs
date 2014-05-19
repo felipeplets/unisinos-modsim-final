@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Ecosistemas.Framework.Relatorios
+namespace Comum.Framework.Relatorios
 {
     public class BaseRdlGenerator
     {

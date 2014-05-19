@@ -4,7 +4,7 @@ using System.Text;
 using System.Net.Mail;
 using System.Net;
 
-namespace Ecosistemas.Framework
+namespace Comum.Framework
 {
     public class Email
     {

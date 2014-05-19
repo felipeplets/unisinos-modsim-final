@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using Castle.ActiveRecord;
 
-namespace Ecosistemas.Framework
+namespace Comum.Framework
 {
     /// <summary>
     /// Assinatura dos métodos de validação.

@@ -3,7 +3,7 @@ using System.Data;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Ecosistemas.Framework.Relatorios
+namespace Comum.Framework.Relatorios
 {
     class TableRdlGenerator
     {

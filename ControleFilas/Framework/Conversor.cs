@@ -6,7 +6,7 @@ using System.Reflection;
 using System.Text;
 using Castle.ActiveRecord;
 
-namespace Ecosistemas.Framework
+namespace Comum.Framework
 {
     public class Conversor
     {

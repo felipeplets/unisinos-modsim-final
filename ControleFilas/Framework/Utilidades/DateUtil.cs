@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Ecosistemas.Framework
+namespace Comum.Framework
 {
     public class DateUtil
     {

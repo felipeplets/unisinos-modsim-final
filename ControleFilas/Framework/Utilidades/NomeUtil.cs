@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Ecosistemas.Framework
+namespace Comum.Framework
 {
     public class NomeUtil
     {

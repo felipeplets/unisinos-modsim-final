@@ -4,7 +4,7 @@ using System.Text;
 using FluorineFx;
 using NHibernate.Criterion;
 
-namespace Ecosistemas.Framework
+namespace Comum.Framework
 {
     [RemotingService]
     public class Ordenacao

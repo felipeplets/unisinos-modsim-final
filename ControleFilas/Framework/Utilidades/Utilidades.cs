@@ -5,7 +5,7 @@ using System.IO;
 using System.Web.UI;
 using System.Web;
 
-namespace Ecosistemas.Framework
+namespace Comum.Framework
 {
     public class Utilidades
     {

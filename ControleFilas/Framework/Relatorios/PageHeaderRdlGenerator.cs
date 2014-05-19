@@ -1,9 +1,9 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
-using Ecosistemas.Framework.Relatorios;
+using Comum.Framework.Relatorios;
 
-namespace Ecosistemas.Framework.Relatorios
+namespace Comum.Framework.Relatorios
 {
     public class PageHeaderRdlGenerator : BaseRdlGenerator
     {

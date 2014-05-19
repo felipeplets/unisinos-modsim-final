@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Ecosistemas.Framework.Utilidade
+namespace Comum.Framework.Utilidade
 {
     public interface IStringToBytesConverter
     {

@@ -6,7 +6,7 @@ using System.Text;
 using System.Xml.Serialization;
 using Microsoft.Reporting.WebForms;
 
-namespace Ecosistemas.Framework.Relatorios
+namespace Comum.Framework.Relatorios
 {
     public class RdlGenerator
     {
