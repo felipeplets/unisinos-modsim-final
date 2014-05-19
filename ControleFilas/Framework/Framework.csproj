@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{23EFBB90-59D3-4474-90C4-4BBB69E6A052}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Framework</RootNamespace>
+    <AssemblyName>Framework</AssemblyName>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
+    <SccProjectName>%24/EHR/Development/20121105.1/Common/Source/Framework/DotNet/Framework</SccProjectName>
+    <SccLocalPath>.</SccLocalPath>
+    <SccAuxPath>http://192.168.13.25:8080/tfs/maincollection</SccAuxPath>
+    <SccProvider>{4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Castle.ActiveRecord">
+      <HintPath>..\..\..\..\CommonBin\DotNet\4.0\Castle.ActiveRecord.dll</HintPath>
+    </Reference>
+    <Reference Include="FluorineFx">
+      <HintPath>..\..\..\..\CommonBin\DotNet\4.0\FluorineFx.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\CommonBin\DotNet\2.0\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\CommonBin\DotNet\2.0\Microsoft.ReportViewer.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate">
+      <HintPath>..\..\..\..\CommonBin\DotNet\4.0\NHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Conversor.cs" />
+    <Compile Include="Linq\LambdaComparer.cs" />
+    <Compile Include="Utilidades\ArrayUtil.cs" />
+    <Compile Include="Utilidades\DateUtil.cs" />
+    <Compile Include="Email.cs" />
+    <Compile Include="IComboBox.cs" />
+    <Compile Include="IValidacao.cs" />
+    <Compile Include="Utilidades\NomeUtil.cs" />
+    <Compile Include="Ordenacao.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Relatorios\BaseRdlGenerator.cs" />
+    <Compile Include="Relatorios\PageHeaderRdlGenerator.cs" />
+    <Compile Include="Relatorios\RdlGenerator.cs" />
+    <Compile Include="Relatorios\ReportDefinition.cs" />
+    <Compile Include="Relatorios\TableRdlGenerator.cs" />
+    <Compile Include="Utilidades\Similaridade.cs" />
+    <Compile Include="Utilidades\StringUtil.cs" />
+    <Compile Include="TratamentoExcessao.cs" />
+    <Compile Include="Utilidades\ExtensionMethods.cs" />
+    <Compile Include="Utilidades\Interface\IBytesToStringConverter.cs" />
+    <Compile Include="Utilidades\Interface\IStringToBytesConverter.cs" />
+    <Compile Include="Utilidades\Implementation\UTF8BytesToStringConverter.cs" />
+    <Compile Include="Utilidades\Implementation\UTF8StringToBytesConverter.cs" />
+    <Compile Include="Utilidades\Utilidades.cs" />
+    <Compile Include="Validacao\Validacao.cs" />
+    <Compile Include="Validacao\Implementation\ValidadorCnpj.cs" />
+    <Compile Include="Validacao\Implementation\ValidadorCpf.cs" />
+    <Compile Include="Validacao\Implementation\ValidadorRg.cs" />
+    <Compile Include="Validacao\Interface\IValidador.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{B4F97281-0DBD-4835-9ED8-7DFB966E87FF}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

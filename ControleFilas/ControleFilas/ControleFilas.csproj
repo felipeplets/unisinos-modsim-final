@@ -52,6 +52,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Validation\BaseValidation.cs" />
     <EmbeddedResource Include="ControleFilas.resx">
       <DependentUpon>ControleFilas.cs</DependentUpon>
     </EmbeddedResource>
@@ -79,7 +80,12 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="BusinessLogic\" />
-    <Folder Include="Util\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Framework\Framework.csproj">
+      <Project>{23efbb90-59d3-4474-90c4-4bbb69e6a052}</Project>
+      <Name>Framework</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
