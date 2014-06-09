@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ControleFilas.BusinessLogic;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -20,6 +21,11 @@ namespace ControleFilas
         private void ControleFilas_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnIniciar_Click(object sender, EventArgs e)
+        {
+            Simulacao.Simular(Convert.ToInt32(this.txtBoxNrElementos.Text.Trim()));
         }
     }
 }
