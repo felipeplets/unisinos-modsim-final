@@ -51,6 +51,9 @@
     <Compile Include="ControleFilas.Designer.cs">
       <DependentUpon>ControleFilas.cs</DependentUpon>
     </Compile>
+    <Compile Include="Library\Elemento.cs" />
+    <Compile Include="Library\Fila.cs" />
+    <Compile Include="Library\Servidor.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Util\RandomNumbers.cs" />

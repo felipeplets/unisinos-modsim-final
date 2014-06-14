@@ -25,7 +25,8 @@ namespace ControleFilas
 
         private void btnIniciar_Click(object sender, EventArgs e)
         {
-            Simulacao.Simular(Convert.ToInt32(this.txtBoxNrElementos.Text.Trim()));
+            Simulacao simulacao = new Simulacao();
+            simulacao.Simular(Convert.ToInt32(this.txtBoxNrElementos.Text.Trim()), 2);
         }
     }
 }
