@@ -27,11 +27,12 @@ namespace ControleFilas.BusinessLogic
             _listElementos = new List<Elemento>();
             _servidor = new List<Servidor>();
 
-            // Criando os servidores;
+            #region Criando os Servidores
             for (int i = 1; i <= servidores; i++)
-                _servidor.Add(new Servidor { Indice = i  });
+                _servidor.Add(new Servidor { Indice = i });
+            #endregion
 
-            // Informar os tempos utilizados para o calculo
+            #region Informar os tempos utilizados para o calculo
             for (int n = 0; n < elementos; n++)
             {
                 Elemento elemento = new Elemento();
@@ -50,11 +51,12 @@ namespace ControleFilas.BusinessLogic
                 elemento.TempoAtendimento = new RandomNumbers(nextRandomAtendimento).NextDoubleExponential();
                 _listElementos.Add(elemento);
             }
-            
+            #endregion
+
             // Inserindo os elementos na Fila
             _fila = new Fila { Elementos = _listElementos.OrderBy(k => k.InstanteChegada).ToList() };
 
-            // Inserindo os primeiros elementos da fila em cada servidor
+            #region Inserindo os primeiros elementos da fila em cada servidor
             for (int i = 0; i < _fila.Elementos.Count; i++)
             {
                 if (i <= (servidores - 1))
@@ -68,8 +70,9 @@ namespace ControleFilas.BusinessLogic
                     _servidor[i].Elementos.Add(_fila.Elementos[i]);
                 }
             }
-           
-            // Inserindo outros elementos nas filas
+            #endregion
+
+            #region Inserindo outros elementos nas filas
             for (int i = 0; i < _fila.Elementos.Count; i++)
             {
                 if (i > (servidores - 1))
@@ -91,27 +94,14 @@ namespace ControleFilas.BusinessLogic
                         if (statusServidor.Count() == 0)
                         {
                             Elemento elementoServidor = _servidor[0].Elementos.OrderByDescending(k => k.Indice).FirstOrDefault();
+                            Atendimento(i, new Servidor(), elementoServidor, false);
 
-                            Elemento elemento = _fila.Elementos[i];
-                            elemento.Indice = elementoServidor.Indice + 1;
-                            elemento.EntradaAtendimento = elemento.InstanteChegada;
-                            elemento.SaidaAtendimento = elemento.TempoAtendimento + elemento.InstanteChegada;
-                            elemento.TempoFila = 0;
-                            elemento.TempoTotal = elemento.TempoAtendimento + elemento.TempoFila;
-                            _servidor[0].Elementos.Add(_fila.Elementos[i]);
                         }
                         else
                         {
-                            Servidor servidor = _servidor.FirstOrDefault(k => !statusServidor.Any(j => j.Indice == k.Indice) );
+                            Servidor servidor = _servidor.FirstOrDefault(k => !statusServidor.Any(j => j.Indice == k.Indice));
                             Elemento elementoServidor = servidor.Elementos.OrderByDescending(k => k.Indice).FirstOrDefault();
-
-                            Elemento elemento = _fila.Elementos[i];
-                            elemento.Indice = elementoServidor.Indice + 1;
-                            elemento.EntradaAtendimento = elemento.InstanteChegada;
-                            elemento.SaidaAtendimento = elemento.TempoAtendimento + elemento.InstanteChegada;
-                            elemento.TempoFila = 0;
-                            elemento.TempoTotal = elemento.TempoAtendimento + elemento.TempoFila;
-                            _servidor[servidor.Indice - 1].Elementos.Add(_fila.Elementos[i]);
+                            Atendimento(i, servidor, elementoServidor, false);
                         }
                     }
                     else
@@ -120,16 +110,11 @@ namespace ControleFilas.BusinessLogic
                         Servidor servidor = statusServidor.FirstOrDefault();
                         Elemento elementoServidor = servidor.Elementos.OrderByDescending(k => k.Indice).FirstOrDefault();
 
-                        Elemento elemento = _fila.Elementos[i];
-                        elemento.Indice = elementoServidor.Indice + 1;
-                        elemento.EntradaAtendimento = elementoServidor.SaidaAtendimento;
-                        elemento.SaidaAtendimento = elemento.TempoAtendimento + elementoServidor.SaidaAtendimento;
-                        elemento.TempoFila = elementoServidor.SaidaAtendimento - elemento.InstanteChegada;
-                        elemento.TempoTotal = elemento.TempoAtendimento + elemento.TempoFila;
-                        _servidor[servidor.Indice - 1].Elementos.Add(_fila.Elementos[i]);
+                        Atendimento(i, servidor, elementoServidor, true);
                     }
                 }
             }
+            #endregion
 
             #region Apenas para 1 servidor
 
@@ -202,10 +187,30 @@ namespace ControleFilas.BusinessLogic
             #endregion
         }
 
-        public void Atendimento(Elemento elemento, List<Servidor> servidores, int indiceServidor)
+        private void Atendimento(int i, Servidor servidor, Elemento elementoServidor, bool ocupado)
         {
-            Servidor servidor = servidores.FirstOrDefault(k => k.Indice == indiceServidor);
-            servidor.Elementos.Add(elemento);
+            Elemento elemento = _fila.Elementos[i];
+            elemento.Indice = elementoServidor.Indice + 1;
+
+            if (!ocupado)
+            {
+                elemento.SaidaAtendimento = elemento.TempoAtendimento + elemento.InstanteChegada;
+                elemento.TempoFila = 0;
+                elemento.TempoTotal = elemento.TempoAtendimento + elemento.TempoFila;
+
+                if (servidor.Indice > 0)
+                    _servidor[servidor.Indice - 1].Elementos.Add(_fila.Elementos[i]);
+                else
+                    _servidor[0].Elementos.Add(_fila.Elementos[i]);
+            }
+            else
+            {
+                elemento.EntradaAtendimento = elementoServidor.SaidaAtendimento;
+                elemento.SaidaAtendimento = elemento.TempoAtendimento + elementoServidor.SaidaAtendimento;
+                elemento.TempoFila = elementoServidor.SaidaAtendimento - elemento.InstanteChegada;
+                elemento.TempoTotal = elemento.TempoAtendimento + elemento.TempoFila;
+                _servidor[servidor.Indice - 1].Elementos.Add(_fila.Elementos[i]);
+            }
         }
     }
 }
