@@ -41,20 +41,18 @@ namespace ControleFilas.BusinessLogic
 
                 System.Random randomChegada = new System.Random(n + 1);
                 int nextRandomChegada = randomChegada.Next(1, 1000);
-                tabela[n, 0] = sum + new RandomNumbers(nextRandomChegada).NextDouble();
-                elemento.InstanteChegada = sum + new RandomNumbers(nextRandomChegada).NextDouble();
-
+                tabela[n, 0] = sum + new RandomNumbers(nextRandomChegada).NextDoubleExponential();
+                elemento.InstanteChegada = sum + new RandomNumbers(nextRandomChegada).NextDoubleExponential();
 
                 System.Random randomAtendimento = new System.Random(n + 1);
                 int nextRandomAtendimento = randomAtendimento.Next(1, 1000);
-                tabela[n, 1] = new RandomNumbers(nextRandomAtendimento).NextDouble();
-                elemento.TempoAtendimento = new RandomNumbers(nextRandomAtendimento).NextDouble();
+                tabela[n, 1] = new RandomNumbers(nextRandomAtendimento).NextDoubleExponential();
+                elemento.TempoAtendimento = new RandomNumbers(nextRandomAtendimento).NextDoubleExponential();
                 _listElementos.Add(elemento);
             }
             
             // Inserindo os elementos na Fila
             _fila = new Fila { Elementos = _listElementos.OrderBy(k => k.InstanteChegada).ToList() };
-
 
             // Inserindo os primeiros elementos da fila em cada servidor
             for (int i = 0; i < _fila.Elementos.Count; i++)
@@ -70,7 +68,6 @@ namespace ControleFilas.BusinessLogic
                     _servidor[i].Elementos.Add(_fila.Elementos[i]);
                 }
             }
-
            
             // Inserindo outros elementos nas filas
             for (int i = 0; i < _fila.Elementos.Count; i++)
@@ -133,7 +130,6 @@ namespace ControleFilas.BusinessLogic
                     }
                 }
             }
-
 
             #region Apenas para 1 servidor
 
@@ -212,6 +208,4 @@ namespace ControleFilas.BusinessLogic
             servidor.Elementos.Add(elemento);
         }
     }
-
-
 }

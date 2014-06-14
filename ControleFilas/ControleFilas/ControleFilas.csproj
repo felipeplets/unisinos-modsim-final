@@ -51,6 +51,7 @@
     <Compile Include="ControleFilas.Designer.cs">
       <DependentUpon>ControleFilas.cs</DependentUpon>
     </Compile>
+    <Compile Include="Enumerator\Distribution.cs" />
     <Compile Include="Library\Elemento.cs" />
     <Compile Include="Library\Fila.cs" />
     <Compile Include="Library\Servidor.cs" />
