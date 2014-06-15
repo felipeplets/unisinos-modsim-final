@@ -43,5 +43,10 @@ namespace ControleFilas
             labelTempoMedioTotal.Text = _tempoMedioTotal.ToString("#,##0.000") + " " + " minutos";
             labelTitulo.Text = titulo;
         }
+
+        private void ExibirDados_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

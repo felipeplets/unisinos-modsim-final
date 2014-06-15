@@ -42,11 +42,14 @@ namespace ControleFilas
                 Convert.ToInt32(this.txtBoxPagarNrServidores.Text.Trim()),
                 TypeDistribution.Cauchy);
 
-            ExibirDados dadosEntrada = new ExibirDados(listElementosEntrada, "Exibir dados - Sistema para se servir");
+            ExibirDados dadosEntrada = new ExibirDados(listElementosEntrada, "Exibir Dados - Sistema para Servir");
             dadosEntrada.Show();
 
-            ExibirDados dadosSistema = new ExibirDados(listElementosSaida, "Exibir dados - Sistema para pagar");
+            ExibirDados dadosSistema = new ExibirDados(listElementosSaida, "Exibir Dados - Sistema para Pagar");
             dadosSistema.Show();
+
+            ExibirDadosCompletos dadosCompleto = new ExibirDadosCompletos(listElementosEntrada, listElementosSaida, Convert.ToInt32(txtBoxConstanteComer.Text.Trim()), "Exibir Dados - Sistema Completo");
+            dadosCompleto.Show();
         }
     }
 }

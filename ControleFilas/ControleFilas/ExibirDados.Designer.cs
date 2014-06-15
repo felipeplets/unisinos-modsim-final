@@ -42,7 +42,7 @@
             this.exibindoDados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.exibindoDados.Location = new System.Drawing.Point(12, 41);
             this.exibindoDados.Name = "exibindoDados";
-            this.exibindoDados.Size = new System.Drawing.Size(629, 238);
+            this.exibindoDados.Size = new System.Drawing.Size(823, 238);
             this.exibindoDados.TabIndex = 0;
             // 
             // label1
@@ -95,7 +95,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(653, 332);
+            this.ClientSize = new System.Drawing.Size(847, 332);
             this.Controls.Add(this.labelTitulo);
             this.Controls.Add(this.labelTempoMedioGastoFila);
             this.Controls.Add(this.labelTempoMedioTotal);
@@ -104,6 +104,7 @@
             this.Controls.Add(this.exibindoDados);
             this.Name = "ExibirDados";
             this.Text = "Exibir Dados";
+            this.Load += new System.EventHandler(this.ExibirDados_Load);
             ((System.ComponentModel.ISupportInitialize)(this.exibindoDados)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

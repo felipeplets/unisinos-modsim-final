@@ -58,11 +58,13 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.lblProgress = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.txtBoxConstanteComer = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // btnIniciar
             // 
-            this.btnIniciar.Location = new System.Drawing.Point(12, 281);
+            this.btnIniciar.Location = new System.Drawing.Point(12, 325);
             this.btnIniciar.Name = "btnIniciar";
             this.btnIniciar.Size = new System.Drawing.Size(260, 23);
             this.btnIniciar.TabIndex = 0;
@@ -309,17 +311,36 @@
             // lblProgress
             // 
             this.lblProgress.AutoSize = true;
-            this.lblProgress.Location = new System.Drawing.Point(289, 285);
+            this.lblProgress.Location = new System.Drawing.Point(289, 329);
             this.lblProgress.Name = "lblProgress";
             this.lblProgress.Size = new System.Drawing.Size(62, 13);
             this.lblProgress.TabIndex = 31;
             this.lblProgress.Text = "Carregando";
             // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(7, 286);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(160, 13);
+            this.label11.TabIndex = 33;
+            this.label11.Text = "Constante de Tempo pra Comer:";
+            // 
+            // txtBoxConstanteComer
+            // 
+            this.txtBoxConstanteComer.Location = new System.Drawing.Point(169, 283);
+            this.txtBoxConstanteComer.Name = "txtBoxConstanteComer";
+            this.txtBoxConstanteComer.Size = new System.Drawing.Size(100, 20);
+            this.txtBoxConstanteComer.TabIndex = 32;
+            this.txtBoxConstanteComer.Text = "0";
+            // 
             // ControleFilas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(429, 315);
+            this.ClientSize = new System.Drawing.Size(429, 360);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.txtBoxConstanteComer);
             this.Controls.Add(this.lblProgress);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
@@ -390,6 +411,8 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label lblProgress;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox txtBoxConstanteComer;
     }
 }
 

@@ -51,6 +51,13 @@
     <Compile Include="ControleFilas.Designer.cs">
       <DependentUpon>ControleFilas.cs</DependentUpon>
     </Compile>
+    <Compile Include="Converter\ElementoTotalConverter.cs" />
+    <Compile Include="ExibirDadosCompletos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ExibirDadosCompletos.Designer.cs">
+      <DependentUpon>ExibirDadosCompletos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Enumerator\TypeDistribution.cs" />
     <Compile Include="ExibirDados.cs">
       <SubType>Form</SubType>
@@ -58,6 +65,7 @@
     <Compile Include="ExibirDados.Designer.cs">
       <DependentUpon>ExibirDados.cs</DependentUpon>
     </Compile>
+    <Compile Include="Library\ElementoTotal.cs" />
     <Compile Include="Library\Elemento.cs" />
     <Compile Include="Library\Fila.cs" />
     <Compile Include="Library\Servidor.cs" />
@@ -67,6 +75,9 @@
     <Compile Include="Validation\BaseValidation.cs" />
     <EmbeddedResource Include="ControleFilas.resx">
       <DependentUpon>ControleFilas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExibirDadosCompletos.resx">
+      <DependentUpon>ExibirDadosCompletos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ExibirDados.resx">
       <DependentUpon>ExibirDados.cs</DependentUpon>
