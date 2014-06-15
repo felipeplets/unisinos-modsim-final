@@ -51,7 +51,7 @@
     <Compile Include="ControleFilas.Designer.cs">
       <DependentUpon>ControleFilas.cs</DependentUpon>
     </Compile>
-    <Compile Include="Enumerator\Distribution.cs" />
+    <Compile Include="Enumerator\TypeDistribution.cs" />
     <Compile Include="ExibirDados.cs">
       <SubType>Form</SubType>
     </Compile>

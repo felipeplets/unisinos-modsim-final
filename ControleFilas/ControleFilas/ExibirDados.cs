@@ -9,13 +9,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace ControleFilas
 {
     public partial class ExibirDados : Form
     {
         private List<Elemento> _elementos;
-        private float _tempoMedioTotal;
-        private float _tempoMedioFila;
+        private double _tempoMedioTotal;
+        private double _tempoMedioFila;
 
         public ExibirDados()
         {

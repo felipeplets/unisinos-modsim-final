@@ -9,11 +9,11 @@ namespace ControleFilas.Library
     public class Elemento
     {
         public int Indice { get; set; }
-        public float InstanteChegada { get; set; }
-        public float TempoAtendimento { get; set; }
-        public float EntradaAtendimento { get; set; }
-        public float SaidaAtendimento { get; set; }
-        public float TempoFila { get; set; }
-        public float TempoTotal { get; set; }
+        public double InstanteChegada { get; set; }
+        public double TempoAtendimento { get; set; }
+        public double EntradaAtendimento { get; set; }
+        public double SaidaAtendimento { get; set; }
+        public double TempoFila { get; set; }
+        public double TempoTotal { get; set; }
     }
 }

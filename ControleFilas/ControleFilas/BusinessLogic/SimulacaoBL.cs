@@ -16,17 +16,15 @@ namespace ControleFilas.BusinessLogic
         public List<Elemento> _listElementosTemp;
         private List<Servidor> _servidor;
         private Fila _fila;
-        private float _tempomMedioTotal;
-        private float _tempoMedioFila;
 
-        public List<Elemento> Simular(int numeroElementos, int numeroServidores, Distribution distribution)
+        public List<Elemento> Simular(int numeroElementos, int numeroServidores, TypeDistribution distribution)
         {
             int servidores = numeroServidores;  // número de servidores
             int elementos = numeroElementos;    // número de elementos
-            float tmt = 0;                      // tempo médio total
-            float tmf = 0;                      // tempo médio gasto na fila
+            double tmt = 0;                      // tempo médio total
+            double tmf = 0;                      // tempo médio gasto na fila
 
-            float[,] tabela = new float[elementos, 6];
+            double[,] tabela = new double[elementos, 6];
             _listElementos = new List<Elemento>();
             _servidor = new List<Servidor>();
             _listElementosTemp = new List<Elemento>();
@@ -37,23 +35,21 @@ namespace ControleFilas.BusinessLogic
             #endregion
 
             #region Informar os tempos utilizados para o calculo
+            double instanteChegadaAnterior = 0d;
             for (int n = 0; n < elementos; n++)
             {
                 Elemento elemento = new Elemento();
-                float sum = 0.00F;
-                if (n - 1 != -1)
-                    sum += tabela[n - 1, 0];
+                RandomNumbersDistribuitions random = new RandomNumbersDistribuitions(distribution);
+                double numberChegada = random.NextDouble();
+                
+                elemento.InstanteChegada = instanteChegadaAnterior + numberChegada;
+                instanteChegadaAnterior = instanteChegadaAnterior + numberChegada;
 
-                System.Random randomChegada = new System.Random(n + 1);
-                int nextRandomChegada = randomChegada.Next(1, 1000);
-                tabela[n, 0] = sum + new RandomNumbers(nextRandomChegada).NextDoubleExponential();
-                elemento.InstanteChegada = sum + new RandomNumbers(nextRandomChegada).NextDoubleExponential();
-
-                System.Random randomAtendimento = new System.Random(n + 1);
-                int nextRandomAtendimento = randomAtendimento.Next(1, 1000);
-                tabela[n, 1] = new RandomNumbers(nextRandomAtendimento).NextDoubleExponential();
-                elemento.TempoAtendimento = new RandomNumbers(nextRandomAtendimento).NextDoubleExponential();
+                double numberAtendimento = random.NextDouble();
+                tabela[n, 1] = numberAtendimento;
+                elemento.TempoAtendimento = numberAtendimento;
                 _listElementos.Add(elemento);
+                System.Threading.Thread.Sleep(300);
                 
             }
             #endregion
@@ -124,98 +120,26 @@ namespace ControleFilas.BusinessLogic
 
             #region Exibindo os dados no Console
 
-            Console.Write("TC             ");//Tempo de Chegada
-            Console.Write("TA             ");//Tempo de Atendimento
-            Console.Write("TE             ");//Tempo de Entrada para o Serviço 
-            Console.Write("TS             ");//Tempo de Saída do Serviço
-            Console.Write("TF             ");//Tempo Gasto na fila
-            Console.Write("TT             ");//Tempo Total no sistema
-            Console.WriteLine();
-
-            for (int i = 0; i < _listElementosTemp.Count; i++)
-            {
-
-                tmt += _listElementosTemp[i].TempoTotal;
-                tmf += _listElementosTemp[i].TempoFila;
-
-                Console.Write(_listElementosTemp[i].InstanteChegada.ToString("#,##0.0") + "          ");
-                Console.Write(_listElementosTemp[i].TempoAtendimento.ToString("#,##0.0") + "          ");
-                Console.Write(_listElementosTemp[i].EntradaAtendimento.ToString("#,##0.0") + "          ");
-                Console.Write(_listElementosTemp[i].SaidaAtendimento.ToString("#,##0.0") + "          ");
-                Console.Write(_listElementosTemp[i].TempoFila.ToString("#,##0.0") + "          ");
-                Console.Write(_listElementosTemp[i].TempoTotal.ToString("#,##0.0") + "          ");
-                Console.WriteLine();
-            }
-            tmt = tmt / elementos;
-            tmf = tmf / elementos;
-
-            Console.WriteLine();
-            Console.WriteLine();
-            Console.WriteLine("O Tempo Médio Total é: " + tmt.ToString("#,##0.00") + " minutos");
-            Console.WriteLine();
-            Console.WriteLine();
-            Console.WriteLine("O Tempo Médio Gasto na Fila é: " + tmf.ToString("#,##0.00") + " minutos");
-
-            return _listElementosTemp;
-
-            #endregion
-
-            #region Apenas para 1 servidor
-
-            //// Calculo do Tempo do Primeiro Elemento da Fila 
-            //tabela[0, 2] = tabela[0, 0];                    //Tempo de Entrada para o Serviço 
-            //tabela[0, 3] = tabela[0, 1] + tabela[0, 0];     //Tempo de Saída do Serviço
-            //tabela[0, 4] = tabela[0, 2] - tabela[0, 0];     //Tempo Gasto na fila
-            //tabela[0, 5] = tabela[0, 1] - tabela[0, 4];     //Tempo Total na Fila
-
-            //// Calculo dos demais tempos da fila
-            //for (int p = 1; p < elementos; p++)
-            //{
-            //    // se Tempo de Chegada(TC) < Tempo Saída Serviço (TS) (anterior) Então TE = TS 
-            //    //ou Se Tempo de Chegada > Tempo Saída Serviço(anterior) Então TE = TC
-
-            //    if (tabela[p, 0] < tabela[(p - 1), 3])
-            //    {
-            //        tabela[p, 2] = tabela[(p - 1), 3];
-            //    }
-            //    else if (tabela[p, 0] > tabela[(p - 1), 3])
-            //    {
-            //        tabela[p, 2] = tabela[p, 0];
-            //    }
-
-            //    tabela[p, 3] = tabela[p, 1] + tabela[p, 2];
-
-            //    if (tabela[p, 0] < tabela[(p - 1), 3])
-            //    {
-            //        tabela[p, 4] = tabela[p, 2] - tabela[p, 0];
-            //    }
-            //    else
-            //    {
-            //        tabela[p, 4] = 0;
-            //    }
-
-            //    tabela[p, 5] = tabela[p, 1] + tabela[p, 4];
-            //}
-
             //Console.Write("TC             ");//Tempo de Chegada
             //Console.Write("TA             ");//Tempo de Atendimento
             //Console.Write("TE             ");//Tempo de Entrada para o Serviço 
             //Console.Write("TS             ");//Tempo de Saída do Serviço
             //Console.Write("TF             ");//Tempo Gasto na fila
-            //Console.Write("TT             ");//Tempo Total na Fila
+            //Console.Write("TT             ");//Tempo Total no sistema
             //Console.WriteLine();
 
-            //for (int i = 0; i < elementos; i++)
+            //for (int i = 0; i < _listElementosTemp.Count; i++)
             //{
-            //    tmt += tabela[i, 5];
-            //    tmf += tabela[i, 4];
 
-            //    Console.Write(tabela[i, 0].ToString("#,##0.0") + "          ");
-            //    Console.Write(tabela[i, 1].ToString("#,##0.0") + "          ");
-            //    Console.Write(tabela[i, 2].ToString("#,##0.0") + "          ");
-            //    Console.Write(tabela[i, 3].ToString("#,##0.0") + "          ");
-            //    Console.Write(tabela[i, 4].ToString("#,##0.0") + "          ");
-            //    Console.Write(tabela[i, 5].ToString("#,##0.0") + "          ");
+            //    tmt += _listElementosTemp[i].TempoTotal;
+            //    tmf += _listElementosTemp[i].TempoFila;
+
+            //    Console.Write(_listElementosTemp[i].InstanteChegada.ToString("#,##0.0") + "          ");
+            //    Console.Write(_listElementosTemp[i].TempoAtendimento.ToString("#,##0.0") + "          ");
+            //    Console.Write(_listElementosTemp[i].EntradaAtendimento.ToString("#,##0.0") + "          ");
+            //    Console.Write(_listElementosTemp[i].SaidaAtendimento.ToString("#,##0.0") + "          ");
+            //    Console.Write(_listElementosTemp[i].TempoFila.ToString("#,##0.0") + "          ");
+            //    Console.Write(_listElementosTemp[i].TempoTotal.ToString("#,##0.0") + "          ");
             //    Console.WriteLine();
             //}
             //tmt = tmt / elementos;
@@ -223,10 +147,12 @@ namespace ControleFilas.BusinessLogic
 
             //Console.WriteLine();
             //Console.WriteLine();
-            //Console.Write("O Tempo Médio Total é: " + tmt.ToString("#,##0.0") + " minutos");
+            //Console.WriteLine("O Tempo Médio Total é: " + tmt.ToString("#,##0.00") + " minutos");
             //Console.WriteLine();
             //Console.WriteLine();
-            //Console.Write("O Tempo Médio Gasto na Fila é: " + tmf.ToString("#,##0.0") + " minutos");
+            //Console.WriteLine("O Tempo Médio Gasto na Fila é: " + tmf.ToString("#,##0.00") + " minutos");
+
+            return _listElementosTemp;
 
             #endregion
         }
@@ -238,6 +164,7 @@ namespace ControleFilas.BusinessLogic
 
             if (!ocupado)
             {
+                elemento.EntradaAtendimento = elemento.InstanteChegada;
                 elemento.SaidaAtendimento = elemento.TempoAtendimento + elemento.InstanteChegada;
                 elemento.TempoFila = 0;
                 elemento.TempoTotal = elemento.TempoAtendimento + elemento.TempoFila;
@@ -272,7 +199,5 @@ namespace ControleFilas.BusinessLogic
 
             _listElementosTemp.Add(elementoTemp);
         }
-
-        
     }
 }
