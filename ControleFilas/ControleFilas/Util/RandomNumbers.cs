@@ -13,6 +13,18 @@ namespace ControleFilas.Util
         private Distribution _distribution;
         private TypeDistribution _typeDistribuition;
 
+        public static TypeDistribution GetDistribution(int distribution)
+        {
+            switch (distribution)
+	        {
+                case 1:
+                    return TypeDistribution.Cauchy;
+
+		        default:
+                    return TypeDistribution.Normal;
+	        }
+        }
+
         public RandomNumbersDistribuitions(TypeDistribution distribuition)
         {
             _typeDistribuition = distribuition;

@@ -11,7 +11,6 @@ namespace ControleFilas.BusinessLogic
 {
     public partial class Simulacao
     {
-
         public List<Elemento> _listElementos;
         public List<Elemento> _listElementosTemp;
         private List<Servidor> _servidor;
