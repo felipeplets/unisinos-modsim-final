@@ -21,3 +21,7 @@ C:\TeamProjects\EHR\Development\20121105.1\Common\Source\Framework\DotNet\Framew
 C:\TeamProjects\EHR\Development\20121105.1\Common\Source\Framework\DotNet\Framework\obj\Debug\Framework.csprojResolveAssemblyReference.cache
 C:\TeamProjects\EHR\Development\20121105.1\Common\Source\Framework\DotNet\Framework\obj\Debug\Framework.dll
 C:\TeamProjects\EHR\Development\20121105.1\Common\Source\Framework\DotNet\Framework\obj\Debug\Framework.pdb
+C:\Users\Murillo\Documents\GitHub\unisinos-modsim-final\ControleFilas\Framework\bin\Debug\Framework.dll
+C:\Users\Murillo\Documents\GitHub\unisinos-modsim-final\ControleFilas\Framework\bin\Debug\Framework.pdb
+C:\Users\Murillo\Documents\GitHub\unisinos-modsim-final\ControleFilas\Framework\obj\Debug\Framework.dll
+C:\Users\Murillo\Documents\GitHub\unisinos-modsim-final\ControleFilas\Framework\obj\Debug\Framework.pdb

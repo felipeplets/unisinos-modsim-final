@@ -99,6 +99,10 @@
       <Project>{23efbb90-59d3-4474-90c4-4bbb69e6a052}</Project>
       <Name>Framework</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Random\Random.csproj">
+      <Project>{4bf77085-d5ea-4759-a0c6-2b22c7a46712}</Project>
+      <Name>Random</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

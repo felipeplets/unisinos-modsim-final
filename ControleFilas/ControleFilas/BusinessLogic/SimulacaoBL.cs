@@ -1,4 +1,5 @@
-﻿using ControleFilas.Library;
+﻿using ControleFilas.Enumerator;
+using ControleFilas.Library;
 using ControleFilas.Util;
 using System;
 using System.Collections.Generic;
@@ -10,6 +11,7 @@ namespace ControleFilas.BusinessLogic
 {
     public partial class Simulacao
     {
+
         public List<Elemento> _listElementos;
         public List<Elemento> _listElementosTemp;
         private List<Servidor> _servidor;
@@ -17,7 +19,7 @@ namespace ControleFilas.BusinessLogic
         private float _tempomMedioTotal;
         private float _tempoMedioFila;
 
-        public List<Elemento> Simular(int numeroElementos, int numeroServidores)
+        public List<Elemento> Simular(int numeroElementos, int numeroServidores, Distribution distribution)
         {
             int servidores = numeroServidores;  // número de servidores
             int elementos = numeroElementos;    // número de elementos

@@ -1,2 +1,24 @@
 C:\Users\william.hart\Desktop\Projeto M&S\ControleFilas\ControleFilas\bin\Debug\ControleFilas.exe.config
 C:\Users\william.hart\Desktop\Projeto MS\ControleFilas\ControleFilas\bin\Debug\ControleFilas.exe.config
+C:\Users\Murillo\Documents\GitHub\unisinos-modsim-final\ControleFilas\ControleFilas\bin\Debug\ControleFilas.exe.config
+C:\Users\Murillo\Documents\GitHub\unisinos-modsim-final\ControleFilas\ControleFilas\bin\Debug\ControleFilas.exe
+C:\Users\Murillo\Documents\GitHub\unisinos-modsim-final\ControleFilas\ControleFilas\bin\Debug\ControleFilas.pdb
+C:\Users\Murillo\Documents\GitHub\unisinos-modsim-final\ControleFilas\ControleFilas\bin\Debug\Framework.dll
+C:\Users\Murillo\Documents\GitHub\unisinos-modsim-final\ControleFilas\ControleFilas\bin\Debug\NHibernate.dll
+C:\Users\Murillo\Documents\GitHub\unisinos-modsim-final\ControleFilas\ControleFilas\bin\Debug\Castle.ActiveRecord.dll
+C:\Users\Murillo\Documents\GitHub\unisinos-modsim-final\ControleFilas\ControleFilas\bin\Debug\FluorineFx.dll
+C:\Users\Murillo\Documents\GitHub\unisinos-modsim-final\ControleFilas\ControleFilas\bin\Debug\Framework.pdb
+C:\Users\Murillo\Documents\GitHub\unisinos-modsim-final\ControleFilas\ControleFilas\obj\Debug\ControleFilas.csprojResolveAssemblyReference.cache
+C:\Users\Murillo\Documents\GitHub\unisinos-modsim-final\ControleFilas\ControleFilas\obj\Debug\ControleFilas.ControleFilas.resources
+C:\Users\Murillo\Documents\GitHub\unisinos-modsim-final\ControleFilas\ControleFilas\obj\Debug\ControleFilas.Properties.Resources.resources
+C:\Users\Murillo\Documents\GitHub\unisinos-modsim-final\ControleFilas\ControleFilas\obj\Debug\ControleFilas.csproj.GenerateResource.Cache
+C:\Users\Murillo\Documents\GitHub\unisinos-modsim-final\ControleFilas\ControleFilas\obj\Debug\ControleFilas.exe
+C:\Users\Murillo\Documents\GitHub\unisinos-modsim-final\ControleFilas\ControleFilas\obj\Debug\ControleFilas.pdb
+C:\Users\Murillo\Documents\GitHub\unisinos-modsim-final\ControleFilas\ControleFilas\obj\Debug\ControleFilas.ExibirDados.resources
+C:\Users\Murillo\Documents\GitHub\unisinos-modsim-final\ControleFilas\ControleFilas\bin\Debug\Troschuetz.Random.dll
+C:\Users\Murillo\Documents\GitHub\unisinos-modsim-final\ControleFilas\ControleFilas\bin\Debug\LGPL.rtf
+C:\Users\Murillo\Documents\GitHub\unisinos-modsim-final\ControleFilas\ControleFilas\bin\Debug\Troschuetz.Random.pdb
+C:\Users\Murillo\Documents\GitHub\unisinos-modsim-final\ControleFilas\ControleFilas\bin\Debug\Troschuetz.Random.xml
+C:\Users\Murillo\Documents\GitHub\unisinos-modsim-final\ControleFilas\ControleFilas\bin\Debug\de\Troschuetz.Random.resources.dll
+C:\Users\Murillo\Documents\GitHub\unisinos-modsim-final\ControleFilas\ControleFilas\bin\Debug\es\Troschuetz.Random.resources.dll
+C:\Users\Murillo\Documents\GitHub\unisinos-modsim-final\ControleFilas\ControleFilas\bin\Debug\fr\Troschuetz.Random.resources.dll
