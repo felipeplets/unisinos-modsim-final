@@ -1,4 +1,5 @@
 ﻿using ControleFilas.BusinessLogic;
+using ControleFilas.Library;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -27,11 +28,17 @@ namespace ControleFilas
         {
             //Simular Chegada
             Simulacao simulacaoChegada = new Simulacao();
-            simulacaoChegada.Simular(Convert.ToInt32(this.txtBoxNrElementosServir.Text.Trim()), Convert.ToInt32(this.txtBoxServirNrServidores.Text.Trim()));
+            List<Elemento> listElementosEntrada = simulacaoChegada.Simular(Convert.ToInt32(this.txtBoxNrElementosServir.Text.Trim()), Convert.ToInt32(this.txtBoxServirNrServidores.Text.Trim()));
 
             //Simular Saída
             Simulacao simulacaoSaida = new Simulacao();
-            simulacaoSaida.Simular(Convert.ToInt32(this.txtBoxNrElementosPagar.Text.Trim()), Convert.ToInt32(this.txtBoxPagarNrServidores.Text.Trim()));
+            List<Elemento> listElementosSaida = simulacaoSaida.Simular(Convert.ToInt32(this.txtBoxNrElementosPagar.Text.Trim()), Convert.ToInt32(this.txtBoxPagarNrServidores.Text.Trim()));
+
+            ExibirDados dadosEntrada = new ExibirDados(listElementosEntrada, "Exibir dados - Sistema para se servir");
+            dadosEntrada.Show();
+
+            ExibirDados dadosSistema = new ExibirDados(listElementosSaida, "Exibir dados - Sistema para pagar");
+            dadosSistema.Show();
         }
     }
 }

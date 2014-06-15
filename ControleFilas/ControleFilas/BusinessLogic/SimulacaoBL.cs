@@ -17,7 +17,7 @@ namespace ControleFilas.BusinessLogic
         private float _tempomMedioTotal;
         private float _tempoMedioFila;
 
-        public void Simular(int numeroElementos, int numeroServidores)
+        public List<Elemento> Simular(int numeroElementos, int numeroServidores)
         {
             int servidores = numeroServidores;  // número de servidores
             int elementos = numeroElementos;    // número de elementos
@@ -154,6 +154,8 @@ namespace ControleFilas.BusinessLogic
             Console.WriteLine();
             Console.WriteLine("O Tempo Médio Gasto na Fila é: " + tmf.ToString("#,##0.00") + " minutos");
 
+            return _listElementosTemp;
+
             #endregion
 
             #region Apenas para 1 servidor
@@ -264,7 +266,7 @@ namespace ControleFilas.BusinessLogic
             elementoTemp.SaidaAtendimento = elemento.SaidaAtendimento;
             elementoTemp.TempoFila = elemento.TempoFila;
             elementoTemp.TempoTotal = elemento.TempoTotal;
-            elementoTemp.Indice = elemento.Indice;
+            elementoTemp.Indice = _listElementosTemp.Count + 1;
 
             _listElementosTemp.Add(elementoTemp);
         }
