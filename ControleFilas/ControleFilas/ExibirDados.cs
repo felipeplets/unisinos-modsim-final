@@ -36,11 +36,11 @@ namespace ControleFilas
 
             _tempoMedioTotal = _tempoMedioTotal / _elementos.Count;
             _tempoMedioFila = _tempoMedioFila / _elementos.Count;
-            
+
             // Exibir dados na tela
             exibindoDados.DataSource = elementos;
-            labelTempoMedioGastoFila.Text = _tempoMedioFila.ToString("#,##0.000") + " " + " segundos";
-            labelTempoMedioTotal.Text = _tempoMedioTotal.ToString("#,##0.000") + " " + " segundos";
+            labelTempoMedioGastoFila.Text = _tempoMedioFila.ToString("#,##0.000"); // +" " + " segundos";
+            labelTempoMedioTotal.Text = _tempoMedioTotal.ToString("#,##0.000"); // +" " + " segundos";
             labelTitulo.Text = titulo;
         }
 

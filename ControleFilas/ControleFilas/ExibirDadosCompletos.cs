@@ -14,8 +14,6 @@ namespace ControleFilas
 {
     public partial class ExibirDadosCompletos : Form
     {
-        private List<Elemento> _elementosServir;
-        private List<Elemento> _elementosPagar;
         private double _tempoMedioTotal;
         private double _tempoMedioFila;
 
@@ -27,8 +25,7 @@ namespace ControleFilas
         public ExibirDadosCompletos(List<Elemento> elementosServir, List<Elemento> elementosPagar, int constanteTempoComer, string titulo)
         {
             InitializeComponent();
-            _elementosServir = elementosServir;
-
+            
             foreach (Elemento item in elementosServir)
             {
                 _tempoMedioTotal += item.TempoTotal;
@@ -41,13 +38,13 @@ namespace ControleFilas
                 _tempoMedioFila += item.TempoFila;
             }
 
-            _tempoMedioTotal = _tempoMedioTotal / _elementosServir.Count;
-            _tempoMedioFila = _tempoMedioFila / _elementosServir.Count;
+            _tempoMedioTotal = _tempoMedioTotal / elementosServir.Count;
+            _tempoMedioFila = _tempoMedioFila / elementosServir.Count;
             
             // Exibir dados na tela
             exibindoDadosCompletos.DataSource = ElementoTotalConverter.ConverterParaListElementoTotal(elementosServir, elementosPagar, constanteTempoComer);
-            labelTempoMedioGastoFilaCompleto.Text = _tempoMedioFila.ToString("#,##0.000") + " " + " segundos";
-            labelTempoMedioTotalCompleto.Text = _tempoMedioTotal.ToString("#,##0.000") + " " + " segundos";
+            labelTempoMedioGastoFilaCompleto.Text = _tempoMedioFila.ToString("#,##0.000"); // +" " + " segundos";
+            labelTempoMedioTotalCompleto.Text = _tempoMedioTotal.ToString("#,##0.000"); // +" " + " segundos";
             labelTituloCompleto.Text = titulo;
         }
 

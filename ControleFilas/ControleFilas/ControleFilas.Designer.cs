@@ -65,7 +65,7 @@
             this.btnIniciar.Name = "btnIniciar";
             this.btnIniciar.Size = new System.Drawing.Size(260, 23);
             this.btnIniciar.TabIndex = 0;
-            this.btnIniciar.Text = "Simular";
+            this.btnIniciar.Text = "Start Simulation";
             this.btnIniciar.UseVisualStyleBackColor = true;
             this.btnIniciar.Click += new System.EventHandler(this.btnIniciar_Click);
             // 
@@ -86,83 +86,84 @@
             // lblServirSimulacoes
             // 
             this.lblServirSimulacoes.AutoSize = true;
-            this.lblServirSimulacoes.Location = new System.Drawing.Point(52, 32);
+            this.lblServirSimulacoes.Location = new System.Drawing.Point(54, 32);
             this.lblServirSimulacoes.Name = "lblServirSimulacoes";
-            this.lblServirSimulacoes.Size = new System.Drawing.Size(119, 13);
+            this.lblServirSimulacoes.Size = new System.Drawing.Size(115, 13);
             this.lblServirSimulacoes.TabIndex = 7;
-            this.lblServirSimulacoes.Text = "Número de Simulações:";
+            this.lblServirSimulacoes.Text = "Number of Simulations:";
             // 
             // lblServirChegada
             // 
             this.lblServirChegada.AutoSize = true;
-            this.lblServirChegada.Location = new System.Drawing.Point(75, 58);
+            this.lblServirChegada.Location = new System.Drawing.Point(76, 58);
             this.lblServirChegada.Name = "lblServirChegada";
-            this.lblServirChegada.Size = new System.Drawing.Size(95, 13);
+            this.lblServirChegada.Size = new System.Drawing.Size(94, 13);
             this.lblServirChegada.TabIndex = 8;
-            this.lblServirChegada.Text = "Taxa de Chegada:";
+            this.lblServirChegada.Text = "Arrival Distribution:";
             // 
             // lblServirAtendimento
             // 
             this.lblServirAtendimento.AutoSize = true;
-            this.lblServirAtendimento.Location = new System.Drawing.Point(58, 84);
+            this.lblServirAtendimento.Location = new System.Drawing.Point(59, 85);
             this.lblServirAtendimento.Name = "lblServirAtendimento";
-            this.lblServirAtendimento.Size = new System.Drawing.Size(111, 13);
+            this.lblServirAtendimento.Size = new System.Drawing.Size(110, 13);
             this.lblServirAtendimento.TabIndex = 9;
-            this.lblServirAtendimento.Text = "Taxa de Atendimento:";
+            this.lblServirAtendimento.Text = "Attending Distribution:";
             // 
             // lblPagarChegada
             // 
             this.lblPagarChegada.AutoSize = true;
-            this.lblPagarChegada.Location = new System.Drawing.Point(75, 192);
+            this.lblPagarChegada.Location = new System.Drawing.Point(75, 193);
             this.lblPagarChegada.Name = "lblPagarChegada";
-            this.lblPagarChegada.Size = new System.Drawing.Size(95, 13);
+            this.lblPagarChegada.Size = new System.Drawing.Size(94, 13);
             this.lblPagarChegada.TabIndex = 11;
-            this.lblPagarChegada.Text = "Taxa de Chegada:";
+            this.lblPagarChegada.Text = "Arrival Distribution:";
             // 
             // lblPagarSimulacoes
             // 
             this.lblPagarSimulacoes.AutoSize = true;
-            this.lblPagarSimulacoes.Location = new System.Drawing.Point(50, 166);
+            this.lblPagarSimulacoes.Location = new System.Drawing.Point(54, 166);
             this.lblPagarSimulacoes.Name = "lblPagarSimulacoes";
-            this.lblPagarSimulacoes.Size = new System.Drawing.Size(119, 13);
+            this.lblPagarSimulacoes.Size = new System.Drawing.Size(115, 13);
             this.lblPagarSimulacoes.TabIndex = 10;
-            this.lblPagarSimulacoes.Text = "Número de Simulações:";
+            this.lblPagarSimulacoes.Text = "Number of Simulations:";
             // 
             // lblPagarAtendimento
             // 
             this.lblPagarAtendimento.AutoSize = true;
-            this.lblPagarAtendimento.Location = new System.Drawing.Point(60, 218);
+            this.lblPagarAtendimento.Location = new System.Drawing.Point(60, 220);
             this.lblPagarAtendimento.Name = "lblPagarAtendimento";
-            this.lblPagarAtendimento.Size = new System.Drawing.Size(111, 13);
+            this.lblPagarAtendimento.Size = new System.Drawing.Size(110, 13);
             this.lblPagarAtendimento.TabIndex = 14;
-            this.lblPagarAtendimento.Text = "Taxa de Atendimento:";
+            this.lblPagarAtendimento.Text = "Attending Distribution:";
             // 
             // lblServindo
             // 
             this.lblServindo.AutoSize = true;
             this.lblServindo.Location = new System.Drawing.Point(12, 9);
             this.lblServindo.Name = "lblServindo";
-            this.lblServindo.Size = new System.Drawing.Size(49, 13);
+            this.lblServindo.Size = new System.Drawing.Size(68, 13);
             this.lblServindo.TabIndex = 16;
-            this.lblServindo.Text = "Servindo";
+            this.lblServindo.Text = "Getting Food";
+            this.lblServindo.Click += new System.EventHandler(this.lblServindo_Click);
             // 
             // lblPagamento
             // 
             this.lblPagamento.AutoSize = true;
             this.lblPagamento.Location = new System.Drawing.Point(12, 146);
             this.lblPagamento.Name = "lblPagamento";
-            this.lblPagamento.Size = new System.Drawing.Size(61, 13);
+            this.lblPagamento.Size = new System.Drawing.Size(48, 13);
             this.lblPagamento.TabIndex = 15;
-            this.lblPagamento.Text = "Pagamento";
+            this.lblPagamento.Text = "Payment";
             // 
             // lblPagarNrServidores
             // 
             this.lblPagarNrServidores.AutoSize = true;
-            this.lblPagarNrServidores.Location = new System.Drawing.Point(55, 246);
+            this.lblPagarNrServidores.Location = new System.Drawing.Point(71, 247);
             this.lblPagarNrServidores.Name = "lblPagarNrServidores";
-            this.lblPagarNrServidores.Size = new System.Drawing.Size(115, 13);
+            this.lblPagarNrServidores.Size = new System.Drawing.Size(98, 13);
             this.lblPagarNrServidores.TabIndex = 18;
-            this.lblPagarNrServidores.Text = "Número de Servidores:";
+            this.lblPagarNrServidores.Text = "Number of Servers:";
             // 
             // txtBoxPagarNrServidores
             // 
@@ -174,11 +175,11 @@
             // lblServirNrServidores
             // 
             this.lblServirNrServidores.AutoSize = true;
-            this.lblServirNrServidores.Location = new System.Drawing.Point(53, 112);
+            this.lblServirNrServidores.Location = new System.Drawing.Point(70, 112);
             this.lblServirNrServidores.Name = "lblServirNrServidores";
-            this.lblServirNrServidores.Size = new System.Drawing.Size(115, 13);
+            this.lblServirNrServidores.Size = new System.Drawing.Size(98, 13);
             this.lblServirNrServidores.TabIndex = 20;
-            this.lblServirNrServidores.Text = "Número de Servidores:";
+            this.lblServirNrServidores.Text = "Number of Servers:";
             // 
             // txtBoxServirNrServidores
             // 
@@ -192,22 +193,22 @@
             this.lblProgress.AutoSize = true;
             this.lblProgress.Location = new System.Drawing.Point(289, 329);
             this.lblProgress.Name = "lblProgress";
-            this.lblProgress.Size = new System.Drawing.Size(62, 13);
+            this.lblProgress.Size = new System.Drawing.Size(45, 13);
             this.lblProgress.TabIndex = 31;
-            this.lblProgress.Text = "Carregando";
+            this.lblProgress.Text = "Loading";
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(7, 286);
+            this.label11.Location = new System.Drawing.Point(89, 286);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(160, 13);
+            this.label11.Size = new System.Drawing.Size(78, 13);
             this.label11.TabIndex = 33;
-            this.label11.Text = "Constante de Tempo pra Comer:";
+            this.label11.Text = "Time of Eating:";
             // 
             // txtBoxConstanteComer
             // 
-            this.txtBoxConstanteComer.Location = new System.Drawing.Point(169, 283);
+            this.txtBoxConstanteComer.Location = new System.Drawing.Point(170, 283);
             this.txtBoxConstanteComer.Name = "txtBoxConstanteComer";
             this.txtBoxConstanteComer.Size = new System.Drawing.Size(100, 20);
             this.txtBoxConstanteComer.TabIndex = 32;
@@ -332,9 +333,9 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(289, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(117, 13);
+            this.label1.Size = new System.Drawing.Size(47, 13);
             this.label1.TabIndex = 38;
-            this.label1.Text = "Legendas Distribuições";
+            this.label1.Text = "Subtitles";
             // 
             // ControleFilas
             // 
@@ -371,7 +372,7 @@
             this.Controls.Add(this.txtBoxNrElementosServir);
             this.Controls.Add(this.btnIniciar);
             this.Name = "ControleFilas";
-            this.Text = "Controle Filas";
+            this.Text = "Queue Control";
             this.Load += new System.EventHandler(this.ControleFilas_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

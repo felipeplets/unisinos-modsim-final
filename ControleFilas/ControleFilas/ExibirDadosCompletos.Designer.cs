@@ -48,20 +48,20 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(14, 299);
+            this.label1.Location = new System.Drawing.Point(15, 299);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(97, 13);
+            this.label1.Size = new System.Drawing.Size(103, 13);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Tempo médio total:";
+            this.label1.Text = "Average Total Time:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(330, 299);
+            this.label2.Location = new System.Drawing.Point(354, 299);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(134, 13);
+            this.label2.Size = new System.Drawing.Size(116, 13);
             this.label2.TabIndex = 2;
-            this.label2.Text = "Tempo médio gasto na fila:";
+            this.label2.Text = "Average time in queue:";
             // 
             // labelTempoMedioTotalCompleto
             // 
@@ -103,7 +103,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.exibindoDadosCompletos);
             this.Name = "ExibirDadosCompletos";
-            this.Text = "Exibir Dados Completos";
+            this.Text = "Showing Complete Data";
             this.Load += new System.EventHandler(this.ExibirDados_Load);
             ((System.ComponentModel.ISupportInitialize)(this.exibindoDadosCompletos)).EndInit();
             this.ResumeLayout(false);

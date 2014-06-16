@@ -19,8 +19,6 @@ namespace ControleFilas
         {
             InitializeComponent();
             lblProgress.Visible = false;
-
-
         }
 
         private void ControleFilas_Load(object sender, EventArgs e)
@@ -57,7 +55,7 @@ namespace ControleFilas
                     (TypeDistribution)Enum.Parse(typeof(TypeDistribution), cmb_ServindoAtendimento.Text),
                     TypeService.Lunch);
 
-                ExibirDados dadosEntrada = new ExibirDados(listElementosEntrada, "Exibir Dados - Sistema para Servir");
+                ExibirDados dadosEntrada = new ExibirDados(listElementosEntrada, "Showing Data - Getting Food System");
                 dadosEntrada.Show();
             }
 
@@ -71,17 +69,22 @@ namespace ControleFilas
                     (TypeDistribution)Enum.Parse(typeof(TypeDistribution), cmb_PagandoAtendimento.Text),
                     TypeService.Payment);
 
-                ExibirDados dadosSistema = new ExibirDados(listElementosSaida, "Exibir Dados - Sistema para Pagar");
+                ExibirDados dadosSistema = new ExibirDados(listElementosSaida, "Showing Data - Paying System");
                 dadosSistema.Show();
             }
 
             if (this.txtBoxNrElementosServir.Text == this.txtBoxNrElementosPagar.Text)
             {
-                ExibirDadosCompletos dadosCompleto = new ExibirDadosCompletos(listElementosEntrada, listElementosSaida, Convert.ToInt32(txtBoxConstanteComer.Text.Trim()), "Exibir Dados - Sistema Completo");
+                ExibirDadosCompletos dadosCompleto = new ExibirDadosCompletos(listElementosEntrada, listElementosSaida, Convert.ToInt32(txtBoxConstanteComer.Text.Trim()), "Showing Data - Complete System");
                 dadosCompleto.Show();
             }
 
             
+        }
+
+        private void lblServindo_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
