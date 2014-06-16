@@ -43,16 +43,6 @@
             this.txtBoxPagarNrServidores = new System.Windows.Forms.TextBox();
             this.lblServirNrServidores = new System.Windows.Forms.Label();
             this.txtBoxServirNrServidores = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
             this.lblProgress = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.txtBoxConstanteComer = new System.Windows.Forms.TextBox();
@@ -60,6 +50,13 @@
             this.cmb_ServindoAtendimento = new System.Windows.Forms.ComboBox();
             this.cmb_PagandoChegada = new System.Windows.Forms.ComboBox();
             this.cmb_PagandoAtendimento = new System.Windows.Forms.ComboBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnIniciar
@@ -190,96 +187,6 @@
             this.txtBoxServirNrServidores.Size = new System.Drawing.Size(100, 20);
             this.txtBoxServirNrServidores.TabIndex = 19;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(302, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(117, 13);
-            this.label1.TabIndex = 21;
-            this.label1.Text = "Legendas Distribuições";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(320, 29);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(67, 13);
-            this.label2.TabIndex = 22;
-            this.label2.Text = "- Cauchy = 1";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(320, 55);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(88, 13);
-            this.label3.TabIndex = 23;
-            this.label3.Text = "- Gen. Pareto = 2";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(320, 81);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(91, 13);
-            this.label4.TabIndex = 24;
-            this.label4.Text = "- Hypersecant = 3";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(320, 109);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(69, 13);
-            this.label5.TabIndex = 25;
-            this.label5.Text = "- Laplace = 4";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(320, 163);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(67, 13);
-            this.label6.TabIndex = 26;
-            this.label6.Text = "- Cauchy = 1";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(320, 189);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(86, 13);
-            this.label7.TabIndex = 27;
-            this.label7.Text = "- Fatigue Life = 5";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(320, 215);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(50, 13);
-            this.label8.TabIndex = 28;
-            this.label8.Text = "- Burr = 6";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(320, 243);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(79, 13);
-            this.label9.TabIndex = 29;
-            this.label9.Text = "- Pearson 5 = 7";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(302, 146);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(117, 13);
-            this.label10.TabIndex = 30;
-            this.label10.Text = "Legendas Distribuições";
-            // 
             // lblProgress
             // 
             this.lblProgress.AutoSize = true;
@@ -366,21 +273,74 @@
             this.cmb_PagandoAtendimento.Size = new System.Drawing.Size(99, 21);
             this.cmb_PagandoAtendimento.TabIndex = 37;
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(307, 161);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(66, 13);
+            this.label7.TabIndex = 44;
+            this.label7.Text = "- Weibull = 6";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(307, 135);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(67, 13);
+            this.label6.TabIndex = 43;
+            this.label6.Text = "- Gamma = 5";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(307, 109);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(64, 13);
+            this.label5.TabIndex = 42;
+            this.label5.Text = "- Normal = 4";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(307, 81);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(82, 13);
+            this.label4.TabIndex = 41;
+            this.label4.Text = "- LogNormal = 3";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(307, 55);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(69, 13);
+            this.label3.TabIndex = 40;
+            this.label3.Text = "- Laplace = 2";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(307, 29);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(67, 13);
+            this.label2.TabIndex = 39;
+            this.label2.Text = "- Cauchy = 1";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(289, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(117, 13);
+            this.label1.TabIndex = 38;
+            this.label1.Text = "Legendas Distribuições";
+            // 
             // ControleFilas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(429, 360);
-            this.Controls.Add(this.cmb_PagandoAtendimento);
-            this.Controls.Add(this.cmb_PagandoChegada);
-            this.Controls.Add(this.cmb_ServindoAtendimento);
-            this.Controls.Add(this.cmb_ServindoChegada);
-            this.Controls.Add(this.label11);
-            this.Controls.Add(this.txtBoxConstanteComer);
-            this.Controls.Add(this.lblProgress);
-            this.Controls.Add(this.label10);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -388,6 +348,13 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.cmb_PagandoAtendimento);
+            this.Controls.Add(this.cmb_PagandoChegada);
+            this.Controls.Add(this.cmb_ServindoAtendimento);
+            this.Controls.Add(this.cmb_ServindoChegada);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.txtBoxConstanteComer);
+            this.Controls.Add(this.lblProgress);
             this.Controls.Add(this.lblServirNrServidores);
             this.Controls.Add(this.txtBoxServirNrServidores);
             this.Controls.Add(this.lblPagarNrServidores);
@@ -428,16 +395,6 @@
         private System.Windows.Forms.TextBox txtBoxPagarNrServidores;
         private System.Windows.Forms.Label lblServirNrServidores;
         private System.Windows.Forms.TextBox txtBoxServirNrServidores;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label lblProgress;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox txtBoxConstanteComer;
@@ -445,6 +402,13 @@
         private System.Windows.Forms.ComboBox cmb_ServindoAtendimento;
         private System.Windows.Forms.ComboBox cmb_PagandoChegada;
         private System.Windows.Forms.ComboBox cmb_PagandoAtendimento;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
     }
 }
 
