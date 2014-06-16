@@ -108,6 +108,18 @@ namespace Troschuetz.Random
 		{
 		}
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ParetoDistribution"/> class, using a 
+        ///   <see cref="StandardGenerator"/> as underlying random number generator. Set Alpha and beta
+        /// </summary>
+        public ParetoDistribution(double alpha, double beta)
+            : this(new StandardGenerator())
+        {
+            this.alpha = alpha;
+            this.beta = beta;
+            this.UpdateHelpers();
+        }
+
 		/// <summary>
         /// Initializes a new instance of the <see cref="ParetoDistribution"/> class, using the specified 
         ///   <see cref="Generator"/> as underlying random number generator.

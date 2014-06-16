@@ -11,15 +11,21 @@ namespace ControleFilas.BusinessLogic
 {
     public partial class Simulacao
     {
+
         public List<Elemento> _listElementos;
         public List<Elemento> _listElementosTemp;
         private List<Servidor> _servidor;
         private Fila _fila;
 
-        public List<Elemento> Simular(int numeroElementos, int numeroServidores, TypeDistribution distribution)
+        public List<Elemento> Simular(
+            int numberElements, 
+            int numberServers, 
+            TypeDistribution distributionArrive,
+            TypeDistribution distributionService, 
+            TypeService typeService)
         {
-            int servidores = numeroServidores;  // número de servidores
-            int elementos = numeroElementos;    // número de elementos
+            int servidores = numberServers;  // número de servidores
+            int elementos = numberElements;    // número de elementos
             double tmt = 0;                      // tempo médio total
             double tmf = 0;                      // tempo médio gasto na fila
 
@@ -38,13 +44,14 @@ namespace ControleFilas.BusinessLogic
             for (int n = 0; n < elementos; n++)
             {
                 Elemento elemento = new Elemento();
-                RandomNumbersDistribuitions random = new RandomNumbersDistribuitions(distribution);
+                RandomNumbersDistribuitions random = new RandomNumbersDistribuitions(distributionArrive, typeService, TypeMoment.ArrivalTime);
                 double numberChegada = random.NextDouble();
                 
                 elemento.InstanteChegada = instanteChegadaAnterior + numberChegada;
                 instanteChegadaAnterior = instanteChegadaAnterior + numberChegada;
 
-                double numberAtendimento = random.NextDouble();
+                RandomNumbersDistribuitions randomService = new RandomNumbersDistribuitions(distributionService, typeService, TypeMoment.ServiceTime);
+                double numberAtendimento = randomService.NextDouble();
                 tabela[n, 1] = numberAtendimento;
                 elemento.TempoAtendimento = numberAtendimento;
                 _listElementos.Add(elemento);
@@ -84,7 +91,7 @@ namespace ControleFilas.BusinessLogic
 
                     // Caso o status servidor tenha varios itens, mas eles nao
                     // superem o total de servidor, então há vaga em algum servidor
-                    if (statusServidor.Count() < numeroServidores)
+                    if (statusServidor.Count() < numberServers)
                     {
                         // Inserir tempo entrada para o serviço 
                         // Inserir tempo de saída do serviço

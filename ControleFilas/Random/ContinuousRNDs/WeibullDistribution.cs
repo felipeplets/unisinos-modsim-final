@@ -115,6 +115,14 @@ namespace Troschuetz.Random
 		{
 		}
 
+        public WeibullDistribution(double alpha, double lambda)
+            : this(new StandardGenerator())
+        {
+            this.alpha = alpha;
+            this.lambda = lambda;
+            this.UpdateHelpers();
+        }
+
 		/// <summary>
         /// Initializes a new instance of the <see cref="WeibullDistribution"/> class, using the specified 
         ///   <see cref="Generator"/> as underlying random number generator.

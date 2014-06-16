@@ -177,6 +177,15 @@ namespace Troschuetz.Random
 		{
 		}
 
+        public NormalDistribution(double mu, double sigma)
+            : this(new StandardGenerator())
+        {
+            this.mu = mu;
+            this.sigma = sigma;
+
+            this.UpdateHelpers();
+        }
+
 		/// <summary>
         /// Initializes a new instance of the <see cref="NormalDistribution"/> class, using the specified 
         ///   <see cref="Generator"/> as underlying random number generator.

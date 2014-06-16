@@ -116,6 +116,14 @@ namespace Troschuetz.Random
 		{
 		}
 
+        public GammaDistribution(double alpha, double theta)
+            : this(new StandardGenerator())
+        {
+            this.alpha = alpha;
+            this.theta = theta;
+            this.UpdateHelpers();
+        }
+
 		/// <summary>
         /// Initializes a new instance of the <see cref="GammaDistribution"/> class, using the specified 
         ///   <see cref="Generator"/> as underlying random number generator.

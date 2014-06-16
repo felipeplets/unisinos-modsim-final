@@ -19,6 +19,8 @@ namespace ControleFilas
         {
             InitializeComponent();
             lblProgress.Visible = false;
+
+
         }
 
         private void ControleFilas_Load(object sender, EventArgs e)
@@ -28,28 +30,58 @@ namespace ControleFilas
 
         private void btnIniciar_Click(object sender, EventArgs e)
         {
-            //Simular Chegada
             Simulacao simulacaoChegada = new Simulacao();
-            List<Elemento> listElementosEntrada = simulacaoChegada.Simular(
-                Convert.ToInt32(this.txtBoxNrElementosServir.Text.Trim()), 
-                Convert.ToInt32(this.txtBoxServirNrServidores.Text.Trim()),
-                TypeDistribution.Cauchy);
-
-            //Simular Saída
             Simulacao simulacaoSaida = new Simulacao();
-            List<Elemento> listElementosSaida = simulacaoSaida.Simular(
-                Convert.ToInt32(this.txtBoxNrElementosPagar.Text.Trim()), 
-                Convert.ToInt32(this.txtBoxPagarNrServidores.Text.Trim()),
-                TypeDistribution.Cauchy);
+            List<Elemento> listElementosSaida = new List<Elemento>();
+            List<Elemento> listElementosEntrada = new List<Elemento>();
 
-            ExibirDados dadosEntrada = new ExibirDados(listElementosEntrada, "Exibir Dados - Sistema para Servir");
-            dadosEntrada.Show();
+            if (String.IsNullOrWhiteSpace(cmb_ServindoChegada.Text))
+                cmb_ServindoChegada.Text = "Cauchy";
 
-            ExibirDados dadosSistema = new ExibirDados(listElementosSaida, "Exibir Dados - Sistema para Pagar");
-            dadosSistema.Show();
+            if (String.IsNullOrWhiteSpace(cmb_ServindoAtendimento.Text))
+                cmb_ServindoAtendimento.Text = "Cauchy";
 
-            ExibirDadosCompletos dadosCompleto = new ExibirDadosCompletos(listElementosEntrada, listElementosSaida, Convert.ToInt32(txtBoxConstanteComer.Text.Trim()), "Exibir Dados - Sistema Completo");
-            dadosCompleto.Show();
+            if (String.IsNullOrWhiteSpace(cmb_PagandoChegada.Text))
+                cmb_PagandoChegada.Text = "Cauchy";
+
+            if (String.IsNullOrWhiteSpace(cmb_PagandoAtendimento.Text))
+                cmb_PagandoAtendimento.Text = "Cauchy";
+
+            if (!String.IsNullOrWhiteSpace(this.txtBoxNrElementosServir.Text) && !String.IsNullOrWhiteSpace(this.txtBoxServirNrServidores.Text))
+            {
+                //Simular Chegada
+                listElementosEntrada = simulacaoChegada.Simular(
+                    Convert.ToInt32(this.txtBoxNrElementosServir.Text.Trim()), 
+                    Convert.ToInt32(this.txtBoxServirNrServidores.Text.Trim()),
+                    (TypeDistribution)Enum.Parse(typeof(TypeDistribution), cmb_ServindoChegada.Text), 
+                    (TypeDistribution)Enum.Parse(typeof(TypeDistribution), cmb_ServindoAtendimento.Text),
+                    TypeService.Lunch);
+
+                ExibirDados dadosEntrada = new ExibirDados(listElementosEntrada, "Exibir Dados - Sistema para Servir");
+                dadosEntrada.Show();
+            }
+
+            if (!String.IsNullOrWhiteSpace(this.txtBoxNrElementosPagar.Text) && !String.IsNullOrWhiteSpace(this.txtBoxPagarNrServidores.Text))
+            {
+                //Simular Saída
+                listElementosSaida = simulacaoSaida.Simular(
+                    Convert.ToInt32(this.txtBoxNrElementosPagar.Text.Trim()),
+                    Convert.ToInt32(this.txtBoxPagarNrServidores.Text.Trim()),
+                    (TypeDistribution)Enum.Parse(typeof(TypeDistribution), cmb_PagandoChegada.Text),
+                    (TypeDistribution)Enum.Parse(typeof(TypeDistribution), cmb_PagandoAtendimento.Text),
+                    TypeService.Payment);
+
+                ExibirDados dadosSistema = new ExibirDados(listElementosSaida, "Exibir Dados - Sistema para Pagar");
+                dadosSistema.Show();
+            }
+
+            if (this.txtBoxNrElementosServir.Text == this.txtBoxNrElementosPagar.Text)
+            {
+                ExibirDadosCompletos dadosCompleto = new ExibirDadosCompletos(listElementosEntrada, listElementosSaida, Convert.ToInt32(txtBoxConstanteComer.Text.Trim()), "Exibir Dados - Sistema Completo");
+                dadosCompleto.Show();
+            }
+
+            
         }
     }
 }

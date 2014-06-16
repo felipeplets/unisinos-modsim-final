@@ -35,7 +35,7 @@ namespace Troschuetz.Random
     ///   <a href="http://en.wikipedia.org/wiki/Cauchy_distribution">Wikipedia - Cauchy distribution</a> and
     ///   <a href="http://www.xycoon.com/cauchy2p_random.htm">Xycoon - Cauchy Distribution</a>.
     /// </remarks>
-    public class CauchyDistribution : Distribution
+    public class CauchyDistribution : Distribution 
     {
         #region instance fields
         /// <summary>
@@ -110,6 +110,21 @@ namespace Troschuetz.Random
         {
             this.alpha = 1.0;
             this.gamma = 1.0;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CauchyDistribution"/> class, using the specified 
+        ///   <see cref="StandardGenerator"/> as underlying random number generator and set alpha and gama
+        /// </summary>
+        /// <param name="generator">A <see cref="Generator"/> object.</param>
+        /// <exception cref="ArgumentNullException">
+        /// <paramref name="generator"/> is NULL (<see langword="Nothing"/> in Visual Basic).
+        /// </exception>
+        public CauchyDistribution(double alpha, double gama)
+            : this(new StandardGenerator())
+        {
+            this.alpha = alpha;
+            this.gamma = gama;
         }
         #endregion
 

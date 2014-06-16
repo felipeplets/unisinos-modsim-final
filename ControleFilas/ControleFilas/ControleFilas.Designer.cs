@@ -30,11 +30,7 @@
         {
             this.btnIniciar = new System.Windows.Forms.Button();
             this.txtBoxNrElementosServir = new System.Windows.Forms.TextBox();
-            this.txtBoxServicoChegada = new System.Windows.Forms.TextBox();
-            this.txtBoxServicoAtendimento = new System.Windows.Forms.TextBox();
             this.txtBoxNrElementosPagar = new System.Windows.Forms.TextBox();
-            this.txtBoxPagarChegada = new System.Windows.Forms.TextBox();
-            this.txtBoxPagarAtendimento = new System.Windows.Forms.TextBox();
             this.lblServirSimulacoes = new System.Windows.Forms.Label();
             this.lblServirChegada = new System.Windows.Forms.Label();
             this.lblServirAtendimento = new System.Windows.Forms.Label();
@@ -60,6 +56,10 @@
             this.lblProgress = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.txtBoxConstanteComer = new System.Windows.Forms.TextBox();
+            this.cmb_ServindoChegada = new System.Windows.Forms.ComboBox();
+            this.cmb_ServindoAtendimento = new System.Windows.Forms.ComboBox();
+            this.cmb_PagandoChegada = new System.Windows.Forms.ComboBox();
+            this.cmb_PagandoAtendimento = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // btnIniciar
@@ -79,40 +79,12 @@
             this.txtBoxNrElementosServir.Size = new System.Drawing.Size(100, 20);
             this.txtBoxNrElementosServir.TabIndex = 1;
             // 
-            // txtBoxServicoChegada
-            // 
-            this.txtBoxServicoChegada.Location = new System.Drawing.Point(172, 55);
-            this.txtBoxServicoChegada.Name = "txtBoxServicoChegada";
-            this.txtBoxServicoChegada.Size = new System.Drawing.Size(100, 20);
-            this.txtBoxServicoChegada.TabIndex = 2;
-            // 
-            // txtBoxServicoAtendimento
-            // 
-            this.txtBoxServicoAtendimento.Location = new System.Drawing.Point(172, 81);
-            this.txtBoxServicoAtendimento.Name = "txtBoxServicoAtendimento";
-            this.txtBoxServicoAtendimento.Size = new System.Drawing.Size(100, 20);
-            this.txtBoxServicoAtendimento.TabIndex = 3;
-            // 
             // txtBoxNrElementosPagar
             // 
             this.txtBoxNrElementosPagar.Location = new System.Drawing.Point(172, 163);
             this.txtBoxNrElementosPagar.Name = "txtBoxNrElementosPagar";
             this.txtBoxNrElementosPagar.Size = new System.Drawing.Size(100, 20);
             this.txtBoxNrElementosPagar.TabIndex = 4;
-            // 
-            // txtBoxPagarChegada
-            // 
-            this.txtBoxPagarChegada.Location = new System.Drawing.Point(172, 189);
-            this.txtBoxPagarChegada.Name = "txtBoxPagarChegada";
-            this.txtBoxPagarChegada.Size = new System.Drawing.Size(100, 20);
-            this.txtBoxPagarChegada.TabIndex = 5;
-            // 
-            // txtBoxPagarAtendimento
-            // 
-            this.txtBoxPagarAtendimento.Location = new System.Drawing.Point(172, 215);
-            this.txtBoxPagarAtendimento.Name = "txtBoxPagarAtendimento";
-            this.txtBoxPagarAtendimento.Size = new System.Drawing.Size(100, 20);
-            this.txtBoxPagarAtendimento.TabIndex = 6;
             // 
             // lblServirSimulacoes
             // 
@@ -197,7 +169,7 @@
             // 
             // txtBoxPagarNrServidores
             // 
-            this.txtBoxPagarNrServidores.Location = new System.Drawing.Point(171, 243);
+            this.txtBoxPagarNrServidores.Location = new System.Drawing.Point(171, 244);
             this.txtBoxPagarNrServidores.Name = "txtBoxPagarNrServidores";
             this.txtBoxPagarNrServidores.Size = new System.Drawing.Size(100, 20);
             this.txtBoxPagarNrServidores.TabIndex = 17;
@@ -334,11 +306,75 @@
             this.txtBoxConstanteComer.TabIndex = 32;
             this.txtBoxConstanteComer.Text = "0";
             // 
+            // cmb_ServindoChegada
+            // 
+            this.cmb_ServindoChegada.FormattingEnabled = true;
+            this.cmb_ServindoChegada.Items.AddRange(new object[] {
+            "Cauchy",
+            "Laplace",
+            "LogNormal",
+            "Normal",
+            "Gamma",
+            "Weibull"});
+            this.cmb_ServindoChegada.Location = new System.Drawing.Point(173, 55);
+            this.cmb_ServindoChegada.Name = "cmb_ServindoChegada";
+            this.cmb_ServindoChegada.Size = new System.Drawing.Size(99, 21);
+            this.cmb_ServindoChegada.TabIndex = 34;
+            // 
+            // cmb_ServindoAtendimento
+            // 
+            this.cmb_ServindoAtendimento.FormattingEnabled = true;
+            this.cmb_ServindoAtendimento.Items.AddRange(new object[] {
+            "Cauchy",
+            "Laplace",
+            "LogNormal",
+            "Normal",
+            "Gamma",
+            "Weibull"});
+            this.cmb_ServindoAtendimento.Location = new System.Drawing.Point(172, 82);
+            this.cmb_ServindoAtendimento.Name = "cmb_ServindoAtendimento";
+            this.cmb_ServindoAtendimento.Size = new System.Drawing.Size(99, 21);
+            this.cmb_ServindoAtendimento.TabIndex = 35;
+            // 
+            // cmb_PagandoChegada
+            // 
+            this.cmb_PagandoChegada.FormattingEnabled = true;
+            this.cmb_PagandoChegada.Items.AddRange(new object[] {
+            "Cauchy",
+            "Laplace",
+            "LogNormal",
+            "Normal",
+            "Gamma",
+            "Weibull"});
+            this.cmb_PagandoChegada.Location = new System.Drawing.Point(172, 190);
+            this.cmb_PagandoChegada.Name = "cmb_PagandoChegada";
+            this.cmb_PagandoChegada.Size = new System.Drawing.Size(99, 21);
+            this.cmb_PagandoChegada.TabIndex = 36;
+            // 
+            // cmb_PagandoAtendimento
+            // 
+            this.cmb_PagandoAtendimento.FormattingEnabled = true;
+            this.cmb_PagandoAtendimento.Items.AddRange(new object[] {
+            "Cauchy",
+            "Laplace",
+            "LogNormal",
+            "Normal",
+            "Gamma",
+            "Weibull"});
+            this.cmb_PagandoAtendimento.Location = new System.Drawing.Point(172, 217);
+            this.cmb_PagandoAtendimento.Name = "cmb_PagandoAtendimento";
+            this.cmb_PagandoAtendimento.Size = new System.Drawing.Size(99, 21);
+            this.cmb_PagandoAtendimento.TabIndex = 37;
+            // 
             // ControleFilas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(429, 360);
+            this.Controls.Add(this.cmb_PagandoAtendimento);
+            this.Controls.Add(this.cmb_PagandoChegada);
+            this.Controls.Add(this.cmb_ServindoAtendimento);
+            this.Controls.Add(this.cmb_ServindoChegada);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.txtBoxConstanteComer);
             this.Controls.Add(this.lblProgress);
@@ -364,11 +400,7 @@
             this.Controls.Add(this.lblServirAtendimento);
             this.Controls.Add(this.lblServirChegada);
             this.Controls.Add(this.lblServirSimulacoes);
-            this.Controls.Add(this.txtBoxPagarAtendimento);
-            this.Controls.Add(this.txtBoxPagarChegada);
             this.Controls.Add(this.txtBoxNrElementosPagar);
-            this.Controls.Add(this.txtBoxServicoAtendimento);
-            this.Controls.Add(this.txtBoxServicoChegada);
             this.Controls.Add(this.txtBoxNrElementosServir);
             this.Controls.Add(this.btnIniciar);
             this.Name = "ControleFilas";
@@ -383,11 +415,7 @@
 
         private System.Windows.Forms.Button btnIniciar;
         private System.Windows.Forms.TextBox txtBoxNrElementosServir;
-        private System.Windows.Forms.TextBox txtBoxServicoChegada;
-        private System.Windows.Forms.TextBox txtBoxServicoAtendimento;
         private System.Windows.Forms.TextBox txtBoxNrElementosPagar;
-        private System.Windows.Forms.TextBox txtBoxPagarChegada;
-        private System.Windows.Forms.TextBox txtBoxPagarAtendimento;
         private System.Windows.Forms.Label lblServirSimulacoes;
         private System.Windows.Forms.Label lblServirChegada;
         private System.Windows.Forms.Label lblServirAtendimento;
@@ -413,6 +441,10 @@
         private System.Windows.Forms.Label lblProgress;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox txtBoxConstanteComer;
+        private System.Windows.Forms.ComboBox cmb_ServindoChegada;
+        private System.Windows.Forms.ComboBox cmb_ServindoAtendimento;
+        private System.Windows.Forms.ComboBox cmb_PagandoChegada;
+        private System.Windows.Forms.ComboBox cmb_PagandoAtendimento;
     }
 }
 

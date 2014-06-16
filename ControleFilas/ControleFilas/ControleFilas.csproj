@@ -52,6 +52,7 @@
       <DependentUpon>ControleFilas.cs</DependentUpon>
     </Compile>
     <Compile Include="Converter\ElementoTotalConverter.cs" />
+    <Compile Include="Enumerator\TypeService.cs" />
     <Compile Include="ExibirDadosCompletos.cs">
       <SubType>Form</SubType>
     </Compile>

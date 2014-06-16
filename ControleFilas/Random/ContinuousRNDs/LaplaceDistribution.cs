@@ -111,6 +111,18 @@ namespace Troschuetz.Random
             this.alpha = 1.0;
             this.mu = 0.0;
         }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="LaplaceDistribution"/> class, using a 
+        ///   <see cref="StandardGenerator"/> as underlying random number generator. Set alpha and mu
+        /// </summary>
+        public LaplaceDistribution(double alpha, double mu)
+            : this(new StandardGenerator())
+        {
+            this.alpha = alpha;
+            this.mu = mu;
+        }
+
 		#endregion
 	
 		#region instance methods

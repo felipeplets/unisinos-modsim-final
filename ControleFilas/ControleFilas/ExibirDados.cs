@@ -39,8 +39,8 @@ namespace ControleFilas
             
             // Exibir dados na tela
             exibindoDados.DataSource = elementos;
-            labelTempoMedioGastoFila.Text = _tempoMedioFila.ToString("#,##0.000") + " " + " minutos";
-            labelTempoMedioTotal.Text = _tempoMedioTotal.ToString("#,##0.000") + " " + " minutos";
+            labelTempoMedioGastoFila.Text = _tempoMedioFila.ToString("#,##0.000") + " " + " segundos";
+            labelTempoMedioTotal.Text = _tempoMedioTotal.ToString("#,##0.000") + " " + " segundos";
             labelTitulo.Text = titulo;
         }
 

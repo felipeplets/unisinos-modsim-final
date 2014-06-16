@@ -1,4 +1,4 @@
-﻿using System;
+﻿    using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,8 +10,9 @@ namespace ControleFilas.Enumerator
     {
         Cauchy = 1,
         Laplace = 2,
-        Pareto = 3,
-        LogNormal = 4 ,
-        Normal
+        LogNormal = 3 ,
+        Normal = 4,
+        Gamma = 5,
+        Weibull = 6
     }
 }

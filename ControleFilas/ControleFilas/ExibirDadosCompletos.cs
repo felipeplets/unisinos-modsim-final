@@ -46,8 +46,8 @@ namespace ControleFilas
             
             // Exibir dados na tela
             exibindoDadosCompletos.DataSource = ElementoTotalConverter.ConverterParaListElementoTotal(elementosServir, elementosPagar, constanteTempoComer);
-            labelTempoMedioGastoFilaCompleto.Text = _tempoMedioFila.ToString("#,##0.000") + " " + " minutos";
-            labelTempoMedioTotalCompleto.Text = _tempoMedioTotal.ToString("#,##0.000") + " " + " minutos";
+            labelTempoMedioGastoFilaCompleto.Text = _tempoMedioFila.ToString("#,##0.000") + " " + " segundos";
+            labelTempoMedioTotalCompleto.Text = _tempoMedioTotal.ToString("#,##0.000") + " " + " segundos";
             labelTituloCompleto.Text = titulo;
         }
 
